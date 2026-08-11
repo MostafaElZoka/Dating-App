@@ -1,0 +1,7 @@
+<h1 class="text-3xl text-red-500">{{title()}}</h1>
+<ol>
+    @for (item of members(); track item.id) {
+        <li>{{item.displayName}}</li>
+    }
+</ol>
+<button class="btn btn-success">Success</button>

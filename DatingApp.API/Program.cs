@@ -13,6 +13,7 @@ namespace DatingApp.API
             // Add services to the container.
 
             builder.Services.AddControllers();
+            builder.Services.AddCors();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddDbContext<AppDbContext>(opt =>
             {
@@ -32,7 +33,7 @@ namespace DatingApp.API
 
             app.UseAuthorization();
 
-
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200", "https://localhost:4200"));
             app.MapControllers();
 
             app.Run();
