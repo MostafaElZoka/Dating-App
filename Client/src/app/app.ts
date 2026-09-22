@@ -10,7 +10,7 @@ import { lastValueFrom } from 'rxjs';
 })
 export class App implements OnInit {
 
-  protected readonly title = signal('Client');
+  protected readonly title = signal('Dating App');
   private http = inject(HttpClient);
   protected members = signal<any>([]);
 
